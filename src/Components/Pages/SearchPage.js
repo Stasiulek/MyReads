@@ -17,7 +17,6 @@ class SearchPage extends React.Component {
   componentDidMount() {
     BooksAPI.getAll().then(response => {
       this.setState({ books: response });
-      console.log(response);
     })
   }
 
@@ -30,7 +29,6 @@ class SearchPage extends React.Component {
       return this.setState({ results: [] });
     }
     BooksAPI.search(this.state.query.trim()).then(searchResults => {
-      console.log(searchResults);
       if (searchResults.error) {
         return this.setState({ results: [] });
       } else {
@@ -59,9 +57,7 @@ class SearchPage extends React.Component {
         <div className="search-books-bar">
           <Link className="close-search" to="/">Close</Link>
           <div className="search-books-input-wrapper">
-
             <input type="text" placeholder="Search by title or author" value={this.state.query} onChange={(event) => this.updateQuery(event.target.value)} />
-
           </div>
         </div>
         <div className="search-books-results">

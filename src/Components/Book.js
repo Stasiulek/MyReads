@@ -1,17 +1,6 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-// import * as BooksAPI from '../BooksAPI'
-
 
 class Book extends React.Component {
-
-
-    componentDidMount() {
-        // console.log(this);
-    }
-
-    
-
     render() {
         return (
             <li>
@@ -29,10 +18,7 @@ class Book extends React.Component {
                         </div>
                     </div>
                     <div className="book-title">{this.props.book.title}</div>
-
                     <div className="book-authors">{this.props.book.authors || "No author"}</div>
-
-
                 </div>
             </li>
         );
@@ -40,4 +26,3 @@ class Book extends React.Component {
 }
 
 export default Book;
-
