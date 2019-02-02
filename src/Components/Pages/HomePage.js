@@ -13,12 +13,12 @@ class HomePage extends React.Component {
 
   componentDidMount() {
     BooksAPI.getAll().then(response => {
-      console.log(response);
+      // console.log(response);
       this.setState({ books: response });
-      console.log(response[0].shelf)
-      console.log(response[1].shelf)
-      console.log(response[2].shelf)
-      console.log(response[3].shelf)
+      // console.log(response[0].shelf)
+      // console.log(response[1].shelf)
+      // console.log(response[2].shelf)
+      // console.log(response[3].shelf)
 
     })
     }
@@ -33,7 +33,7 @@ class HomePage extends React.Component {
         <div className="list-books-content">
           <div>
             <Shelf name="Currently Reading" books={this.state.books.filter(book => book.shelf === 'currentlyReading')} />
-            <Shelf name="Want To Read" books={this.state.books.filter(book => book.shelf === 'wantToReading')} />
+            <Shelf name="Want To Read" books={this.state.books.filter(book => book.shelf === 'wantToRead')} />
             <Shelf name="Read" books={this.state.books.filter(book => book.shelf === 'read')} />
           </div>
         </div>
