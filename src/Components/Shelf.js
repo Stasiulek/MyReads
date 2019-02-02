@@ -4,11 +4,15 @@ import Book from './Book';
 
 
 class Shelf extends React.Component {
+
+    componentDidMount() {
+        console.log(this.name);
+    }
     render() {
         return (
             <div>
                                     <div className="bookshelf">
-                                        <h2 className="bookshelf-title">Currently Reading</h2>
+                                        <h2 className="bookshelf-title">{this.props.name}</h2>
                                         <div className="bookshelf-books">
                                             <ol className="books-grid">
                                                 <li>
@@ -50,7 +54,7 @@ class Shelf extends React.Component {
                                             </ol>
                                         </div>
                                     </div>
-                                    <div className="bookshelf">
+                                    {/* <div className="bookshelf">
                                         <h2 className="bookshelf-title">Want to Read</h2>
                                         <div className="bookshelf-books">
                                             <ol className="books-grid">
@@ -92,8 +96,8 @@ class Shelf extends React.Component {
                                                 </li>
                                             </ol>
                                         </div>
-                                    </div>
-                                    <div className="bookshelf">
+                                    </div> */}
+                                    {/* <div className="bookshelf">
                                         <h2 className="bookshelf-title">Read</h2>
                                         <div className="bookshelf-books">
                                             <ol className="books-grid">
@@ -153,7 +157,7 @@ class Shelf extends React.Component {
                                                 </li>
                                             </ol>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
         );
     }
