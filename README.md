@@ -1,6 +1,6 @@
 # MyReads Project
 
-Interactive book management app built with [React](https://reactjs.org/)
+Interactive book tracking app built with [React](https://reactjs.org/)
 
 ## How To Use
 
