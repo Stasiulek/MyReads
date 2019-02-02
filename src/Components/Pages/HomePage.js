@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Shelf from '../Shelf';
 import * as BooksAPI from '../../BooksAPI'
 
 class HomePage extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -13,26 +14,21 @@ class HomePage extends React.Component {
 
   componentDidMount() {
     BooksAPI.getAll().then(response => {
-      // console.log(response);
       this.setState({ books: response });
-      // console.log(response[0].shelf)
-      // console.log(response[1].shelf)
-      // console.log(response[2].shelf)
-      // console.log(response[3].shelf)
-
+      console.log(response)
     })
-    }
+  }
 
-    moveBook = (book, shelf) => {
-      BooksAPI.update(book, shelf)
+  moveBook = (book, shelf) => {
+    BooksAPI.update(book, shelf)
       .then(resp => {
-          book.shelf = shelf;
-          this.setState(state => ({
-            books: state.books.filter(bookIterable => bookIterable.id !== book.id).concat([ book ])
-          }));
+        book.shelf = shelf;
+        this.setState(state => ({
+          books: state.books.filter(bookIterable => bookIterable.id !== book.id).concat([book])
+        }));
       });
   }
-  
+
   render() {
     return (
       <div className="list-books">
@@ -46,9 +42,6 @@ class HomePage extends React.Component {
             <Shelf moveBook={this.moveBook} name="Read" books={this.state.books.filter(book => book.shelf === 'read')} />
           </div>
         </div>
-        {/* <div className="open-search">
-              <Link to="/search">Add a book</Link>
-            </div> */}
       </div>
     );
   }
