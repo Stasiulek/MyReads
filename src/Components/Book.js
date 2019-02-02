@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 class Book extends React.Component {
 
     componentDidMount() {
-        console.log(this);
+        // console.log(this);
     }
     render() {
         return (
@@ -14,7 +14,7 @@ class Book extends React.Component {
                     <div className="book-top">
                         <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${this.props.book.imageLinks.smallThumbnail || ''}")` }}></div>
                         <div className="book-shelf-changer">
-                            <select>
+                            <select value ={this.props.book.shelf || "none"}>
                                 <option value="move" disabled>Move to...</option>
                                 <option value="currentlyReading">Currently Reading</option>
                                 <option value="wantToRead">Want to Read</option>
